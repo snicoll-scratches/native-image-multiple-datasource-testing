@@ -1,4 +1,4 @@
-package org.matthenry87.nativetesting.persistence.db2;
+package org.matthenry87.nativetesting.api.db2;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

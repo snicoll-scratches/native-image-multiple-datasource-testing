@@ -1,4 +1,4 @@
-package org.matthenry87.nativetesting.persistence.db1;
+package org.matthenry87.nativetesting.api.db1;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

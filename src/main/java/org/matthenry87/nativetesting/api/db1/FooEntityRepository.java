@@ -1,4 +1,4 @@
-package org.matthenry87.nativetesting.persistence.db1;
+package org.matthenry87.nativetesting.api.db1;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

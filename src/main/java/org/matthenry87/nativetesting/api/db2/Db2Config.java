@@ -1,4 +1,4 @@
-package org.matthenry87.nativetesting.persistence.db2;
+package org.matthenry87.nativetesting.api.db2;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.jpa.HibernatePersistenceProvider;
@@ -23,7 +23,7 @@ import java.util.Map;
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "db2EntityManagerFactory",
         transactionManagerRef = "db2TransactionManager",
-        basePackages = "org.matthenry87.nativetesting.persistence.db2")
+        basePackages = "org.matthenry87.nativetesting.api.db2")
 class Db2Config {
 
     @Bean(name = "db2ServerDataSource")
@@ -46,7 +46,7 @@ class Db2Config {
         emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         emf.setPersistenceUnitName("db2Persist");
         emf.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        emf.setPackagesToScan("org.matthenry87.nativetesting.persistence.db2");
+        emf.setPackagesToScan("org.matthenry87.nativetesting.api.db2");
         emf.setJpaPropertyMap(properties);
         emf.afterPropertiesSet();
 

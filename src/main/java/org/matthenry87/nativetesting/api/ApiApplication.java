@@ -1,15 +1,15 @@
 package org.matthenry87.nativetesting.api;
 
 import lombok.extern.slf4j.Slf4j;
-import org.matthenry87.nativetesting.persistence.db1.Db1Service;
-import org.matthenry87.nativetesting.persistence.db2.Db2Service;
+import org.matthenry87.nativetesting.api.db1.Db1Service;
+import org.matthenry87.nativetesting.api.db2.Db2Service;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @Slf4j
-@SpringBootApplication(scanBasePackages = {"org.matthenry87.nativetesting.*"})
+@SpringBootApplication
 public class ApiApplication {
 
     public static void main(String[] args) {
