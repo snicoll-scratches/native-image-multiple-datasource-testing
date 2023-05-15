@@ -1,5 +1,6 @@
 package org.matthenry87.nativetesting.api.db1;
 
+import com.zaxxer.hikari.HikariDataSource;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,11 @@ import java.util.Map;
         basePackages = "org.matthenry87.nativetesting.api.db1")
 class Db1Config {
 
-    @Bean(name = "db1ServerDataSource")
-    @ConfigurationProperties("db1")
-    DataSource db1ServerDataSource() {
-
-        return DataSourceBuilder.create().build();
-    }
+	@Bean(name = "db1ServerDataSource")
+	@ConfigurationProperties("db1")
+	HikariDataSource db1ServerDataSource() {
+		return DataSourceBuilder.create().type(HikariDataSource.class).build();
+	}
 
     @Bean(name = "db1EntityManagerFactory")
     EntityManagerFactory db1EntityManagerFactory(@Qualifier("db1ServerDataSource") DataSource db1ServerDataSource) {

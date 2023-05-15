@@ -1,5 +1,6 @@
 package org.matthenry87.nativetesting.api.db2;
 
+import com.zaxxer.hikari.HikariDataSource;
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,8 @@ class Db2Config {
 
     @Bean(name = "db2ServerDataSource")
     @ConfigurationProperties("db2")
-    DataSource db2ServerDataSource() {
-
-        return DataSourceBuilder.create().build();
+	HikariDataSource db2ServerDataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
 
     @Bean(name = "db2EntityManagerFactory")
